@@ -25,14 +25,14 @@ return {
 
 		local status, err = Command("cb"):arg("copy"):arg(urls):spawn():wait()
 
-		-- if status or status.success then
-		-- 	ya.notify({
-		-- 		title = "System Clipboard",
-		-- 		content = "Succesfully copied the file(s) to system clipboard",
-		-- 		level = "info",
-		-- 		timeout = 5,
-		-- 	})
-		-- end
+		if status or status.success then
+			ya.notify({
+				title = "System Clipboard",
+				content = "Succesfully copied the file(s) to system clipboard",
+				level = "info",
+				timeout = 2,
+			})
+		end
 
 		if not status or not status.success then
 			ya.notify({
